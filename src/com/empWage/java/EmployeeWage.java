@@ -10,7 +10,7 @@ import java.util.Random;
 public class EmployeeWage {
 	
 	/*
-	 * Add Part time Employee & Wage by assuming part time hours is 8
+	 * solving using switch case
 	 */
 	 public static void main(String[] args) {
 
@@ -29,20 +29,29 @@ public class EmployeeWage {
 		int randomNum = random.nextInt(3);
 		
 		/*
-		 * condition for present or absent
+		 * By using Switch case statement
 		 * Calculate and getting this salary 
+		 * Getting this salary employee Present and Absent and print salary
 		 */
-		if (randomNum == 1) {
-			System.out.println("Employee  is Present");
-			salary = wagePerHour * fullDayHours;
-			System.out.println("Monthly salary for Full Day is: ");
-		}else if (randomNum == 2) {
-			salary = halfDayHours * wagePerHour;
-			System.out.println("Monthly salary for Half Day is: ");
+		switch(randomNum) {
+		
+		case 0:
+				System.out.println("Employee is Absent");
+				System.out.println("Monthly Salary will be: ");
+				break;
+		case 1:
+				System.out.println("Employee is Present");
+				System.out.println("Monthly salary for Full Day: ");
+				salary = wagePerHour * fullDayHours;
+				break;
+		case 2:
+			System.out.println("Employee is Present");
+			System.out.println("Monthly Salary for Half Day: ");
+			salary = wagePerHour * halfDayHours;
+			break;			
+				
 		}
-		else
-			System.out.println("Employee  is Absent");
-			System.out.println("salary is: "+salary);
+		System.out.println(+salary);     
 
 	}
 
