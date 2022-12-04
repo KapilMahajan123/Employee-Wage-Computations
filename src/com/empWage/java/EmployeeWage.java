@@ -10,7 +10,7 @@ import java.util.Random;
 public class EmployeeWage {
 	
 	/*
-	 * Calculate Daily Employee Wage assuming wage per hour is 20 and full day hour is 8
+	 * Add Part time Employee & Wage by assuming part time hours is 8
 	 */
 	 public static void main(String[] args) {
 
@@ -20,12 +20,13 @@ public class EmployeeWage {
 		//input
 		int wagePerHour = 20;
 		int fullDayHours = 8;
+		int halfDayHours = 4;
 		int salary = 0;
 		
 		/*
-		 * will give 0 or 1 random number
+		 * will give 0,1,2 random number
 		 */
-		int randomNum = random.nextInt(2);
+		int randomNum = random.nextInt(3);
 		
 		/*
 		 * condition for present or absent
@@ -34,6 +35,10 @@ public class EmployeeWage {
 		if (randomNum == 1) {
 			System.out.println("Employee  is Present");
 			salary = wagePerHour * fullDayHours;
+			System.out.println("Monthly salary for Full Day is: ");
+		}else if (randomNum == 2) {
+			salary = halfDayHours * wagePerHour;
+			System.out.println("Monthly salary for Half Day is: ");
 		}
 		else
 			System.out.println("Employee  is Absent");
